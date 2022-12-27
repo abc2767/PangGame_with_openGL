@@ -14,7 +14,7 @@ float  g(int min, int max) {
 }
 
 void readFile() {
-	/* Implement: read two files and store the data */
+	/* read two files and store the data */
 	ifstream ifst("triangle.txt"), ifsq("quadrangle.txt");
 	float val;
 	while (ifst >> val, !ifst.eof()) {
@@ -28,7 +28,7 @@ void readFile() {
 }
 
 void drawPrimitive() {
-	/* Implement: draw a triangle or a quadrangle */
+	/* draw a triangle or a quadrangle */
 	if (bDrawTri) {
 		glBegin(GL_TRIANGLES);
 		for (int i = 0; i < triangle.size(); i += 2) {
@@ -37,7 +37,6 @@ void drawPrimitive() {
 		}
 		glEnd();
 	}
-
 	else {
 		glBegin(GL_QUADS);
 		for (int j = 0; j < quadrangle.size(); j += 2) {
@@ -66,7 +65,7 @@ void processNormalKeys(unsigned char key, int x, int y) {
 		bDrawTri = true;
 	else if (key == 'q' || key == 'Q')
 		bDrawTri = false;
-
+	
 	glutPostRedisplay();
 }
 
